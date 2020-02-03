@@ -481,8 +481,10 @@ body {
     display: flex;
     border: 1px solid #e2e2e2;
     border-radius: 8px;
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    height: auto; }
     .news__other img {
+      height: auto;
       width: 40%;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px; }
@@ -509,7 +511,8 @@ body {
           height: .8rem;
           display: inline-block;
           margin-right: 0.32rem;
-          margin-bottom: -.2rem; }
+          margin-bottom: -.2rem;
+          background: url(../assets/icon/left-arrow.svg) center/cover no-repeat; }
     .news__other--category {
       display: flex;
       align-items: center;
@@ -609,6 +612,7 @@ body {
             height: 1.3rem; } }
   .sidebar__video {
     position: relative;
+    background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/world.jpg") center/cover;
     border-radius: 8px;
     padding: 55% 50%;
     margin-top: 3rem; }

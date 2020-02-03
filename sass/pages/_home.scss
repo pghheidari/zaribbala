@@ -268,8 +268,10 @@
         border: 1px solid $color-grey-light1;
         border-radius: 8px;
         margin-top: 2rem;
+        height: auto;
 
         img {
+            height: auto;
             width: 40%;
             border-top-right-radius: 8px;
             border-bottom-right-radius: 8px;
@@ -305,7 +307,7 @@
                     display: inline-block;
                     margin-right: 0.32rem;
                     margin-bottom: -.2rem;
-                    //background: url(../assets/icon/left-arrow.svg) center/cover no-repeat;
+                    background: url(../assets/icon/left-arrow.svg) center/cover no-repeat;
                 }
             }
         }
@@ -437,7 +439,7 @@
 
     &__video {
         position: relative;
-        //background: linear-gradient(to top, $color-black 4%, transparent 40%), url('../assets/img/world.jpg') center/cover;
+        background: linear-gradient(to top, $color-black 4%, transparent 40%), url('../assets/img/world.jpg') center/cover;
         border-radius: 8px;
         padding: 55% 50%;
         margin-top: 3rem;
