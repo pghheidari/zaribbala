@@ -482,15 +482,15 @@ body {
     border: 1px solid #e2e2e2;
     border-radius: 8px;
     margin-top: 2rem;
-    height: auto; }
+    max-height: 100%; }
     .news__other img {
-      height: auto;
+      max-height: 100%;
       width: 40%;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px; }
     .news__other--info {
       width: 60%;
-      height: auto;
+      max-height: 100%;
       margin: 1rem; }
       .news__other--info h5 {
         font-size: 1.1rem;
