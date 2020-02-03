@@ -488,6 +488,7 @@ body {
       border-bottom-right-radius: 8px; }
     .news__other--info {
       width: 60%;
+      height: auto;
       margin: 1rem; }
       .news__other--info h5 {
         font-size: 1.1rem;
@@ -608,7 +609,6 @@ body {
             height: 1.3rem; } }
   .sidebar__video {
     position: relative;
-    background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/world.jpg") center/cover;
     border-radius: 8px;
     padding: 55% 50%;
     margin-top: 3rem; }
