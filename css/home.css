@@ -244,6 +244,7 @@ body {
   @media (min-width: 75em) {
     #slogan {
       height: 88vh;
+      background-image: url("../assets/img/slogan4.jpg");
       clip-path: none; } }
 
 .slogan__text {
