@@ -1,0 +1,796 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  @media (min-width: 56.25em) {
+    html {
+      font-size: 75%; } }
+  @media (min-width: 75em) {
+    html {
+      font-size: 87.5%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 100%; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "IRANYekan";
+  box-sizing: border-box; }
+
+.responsive {
+  width: 100%;
+  height: auto; }
+
+@font-face {
+  font-family: "IRANYekan";
+  src: url("../assets/fonts/iranyekanwebregular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "IRANYekan-Bold";
+  src: url("../assets/fonts/iranyekanwebbold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "IRANYekan-Extra-Bold";
+  src: url("../assets/fonts/iranyekanwebextrabold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "IRANYekan-FD";
+  src: url("../assets/fonts/iranyekanwebregularfanum.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "IRANYekan-Bold-FD";
+  src: url("../assets/fonts/iranyekanwebboldfanum.ttf") format("truetype"); }
+
+.btn {
+  padding: .8rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.3rem; }
+  .btn--white {
+    color: #fff;
+    border: 1px solid #fff; }
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: transform; }
+  .icon--right {
+    display: none;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    @media (min-width: 75em) {
+      .icon--right {
+        display: block; } }
+    .icon--right:hover {
+      -webkit-transform: translateX(8px);
+      transform: translateX(8px); }
+  .icon--left {
+    display: none;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    @media (min-width: 75em) {
+      .icon--left {
+        display: block; } }
+    .icon--left:hover {
+      -webkit-transform: translateX(-8px);
+      transform: translateX(-8px); }
+
+.backdrop {
+  display: none;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s linear; }
+
+.open {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important; }
+
+.header {
+  padding: 1.6rem 16%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .header__togglebtn {
+    display: block;
+    width: 3rem;
+    background: transparent;
+    border: 1px solid #000;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0.8rem;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    .header__togglebtn:focus {
+      outline: none; }
+    .header__togglebtn--bar {
+      width: 100%;
+      height: 0.192rem;
+      background: #000;
+      display: block;
+      margin: 0.5rem 0; }
+    @media (min-width: 75em) {
+      .header__togglebtn {
+        display: none; } }
+  .header__logo {
+    width: 6rem; }
+    .header__logo img {
+      width: 100%; }
+  .header__nav {
+    display: none;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    .header__nav--items {
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .header__nav--items {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex; } }
+    .header__nav--item {
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .header__nav--item {
+          margin: 0 1.6rem; } }
+      .header__nav--item a {
+        /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+        @media (min-width: 75em) {
+          .header__nav--item a {
+            text-decoration: none;
+            color: #222;
+            font-size: 1.1rem; } }
+        .header__nav--item a:hover, .header__nav--item a:active {
+          /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+          @media (min-width: 75em) {
+            .header__nav--item a:hover, .header__nav--item a:active {
+              color: #7c7c7c; } }
+    @media (min-width: 75em) {
+      .header__nav {
+        display: block; } }
+  @media (min-width: 75em) {
+    .header {
+      background: linear-gradient(105deg, #e2e2e2 0%, #e2e2e2 65%, transparent 50%);
+      justify-content: space-between;
+      height: 12vh; } }
+
+.mobile-nav {
+  transform: translateX(100%);
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  right: 0;
+  background: #fff;
+  width: 80%;
+  height: 100vh;
+  transition: transform 300ms ease-out; }
+  .mobile-nav__items {
+    width: 90%;
+    height: 100%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .mobile-nav__item {
+    margin: 1.6rem 0; }
+  .mobile-nav__item a {
+    font-size: 2.4rem; }
+
+#slogan {
+  background-image: url("../assets/img/background2.jpg");
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 0, 99% 0, 100% 70%, 50% 100%, 0 70%);
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  @media (min-width: 75em) {
+    #slogan {
+      height: 88vh;
+      clip-path: none; } }
+
+.slogan__text {
+  position: relative;
+  color: #fff;
+  padding: 15% 5%;
+  text-align: center;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .slogan__text h1 {
+    font-family: "IRANYekan-Bold";
+    font-size: 3rem;
+    margin: 0;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    .slogan__text h1 span {
+      display: inline-block;
+      margin-bottom: 2rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .slogan__text h1 span {
+          display: block; } }
+    @media (min-width: 75em) {
+      .slogan__text h1 {
+        margin: auto; } }
+  .slogan__text a {
+    display: inline-block;
+    margin-top: 2rem; }
+  @media (min-width: 75em) {
+    .slogan__text {
+      position: absolute;
+      right: 16%;
+      top: 30%;
+      text-align: right;
+      padding: 0; } }
+
+/* ------------------------------------------------------ */
+#categories {
+  display: grid;
+  grid-template-columns: 16% 1fr 16%;
+  text-align: center;
+  padding: 5% 0; }
+
+[class^="category__item"] {
+  width: 100%;
+  position: relative;
+  color: #fff;
+  padding: 25%;
+  border-radius: 8px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  [class^="category__item"]:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+  @media (min-width: 75em) {
+    [class^="category__item"] {
+      padding: 40%; } }
+
+.category__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  grid-column: 2/3;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .category__list a {
+    width: 100%;
+    margin-top: 2rem;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    @media (min-width: 75em) {
+      .category__list a {
+        margin-top: 0; }
+        .category__list a:not(:last-child) {
+          margin-left: 3rem; } }
+  @media (min-width: 75em) {
+    .category__list {
+      flex-direction: row; } }
+
+.category__item--1 {
+  background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/learn.jpg") center/cover; }
+
+.category__item--2 {
+  background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/stadium.jpg") center/cover; }
+
+.category__item--3 {
+  background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/bet.jpg") center/cover; }
+
+.category__item--4 {
+  background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/game.jpg") center/cover; }
+
+.category__info {
+  width: 100%;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .category__info h2 {
+    font-family: "IRANYekan-Bold";
+    font-size: 2rem;
+    margin: 0;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    @media (min-width: 75em) {
+      .category__info h2 {
+        font-size: 1.3rem; } }
+  .category__info p {
+    margin: .3rem 0 0 0;
+    font-family: "IRANYekan-FD";
+    font-size: 1.4rem;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    @media (min-width: 75em) {
+      .category__info p {
+        font-size: inherit; } }
+
+/* ------------------------------------------------------ */
+#main-content {
+  padding: 3% 5%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+  flex-direction: column;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  @media (min-width: 75em) {
+    #main-content {
+      padding: 3% 16%;
+      flex-direction: row; } }
+
+.news {
+  width: 100%;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .news__bigpic {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/ronaldo.jpg") center/cover;
+    border-radius: 8px;
+    color: #fff;
+    padding: 2% 5%;
+    margin-top: 1.5rem; }
+    .news__bigpic--category {
+      color: #000;
+      background-color: #fff;
+      display: inline-block;
+      margin-bottom: 0;
+      padding: .5rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .news__bigpic--category {
+          font-size: 1rem; } }
+    .news__bigpic h4 {
+      font-size: 1.6rem;
+      margin: 1.3rem 0;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .news__bigpic h4 {
+          font-size: 1.4rem; } }
+    .news__bigpic--date {
+      font-family: "IRANYekan-FD";
+      border-bottom: 1px solid;
+      display: inline-block;
+      margin: 0;
+      font-size: 1.2rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .news__bigpic--date {
+          font-size: 1rem; } }
+    .news__bigpic--desc {
+      font-size: 1.2rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .news__bigpic--desc {
+          font-size: 1rem; } }
+    .news__bigpic a {
+      color: #fff;
+      display: inline-block;
+      margin-bottom: 5rem;
+      text-decoration: none;
+      border-bottom: 1px dashed;
+      padding-bottom: .4rem;
+      font-size: 1.2rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      .news__bigpic a::after {
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        display: inline-block;
+        margin-right: 0.32rem;
+        margin-bottom: -.2rem; }
+      @media (min-width: 75em) {
+        .news__bigpic a {
+          font-size: 1rem; } }
+    .news__bigpic--author {
+      display: flex;
+      align-items: center; }
+      .news__bigpic--author img {
+        width: 3rem;
+        height: 3rem; }
+      .news__bigpic--author p {
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+        @media (min-width: 75em) {
+          .news__bigpic--author p {
+            font-size: 1rem; } }
+  .news__other {
+    display: flex;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    margin-top: 2rem; }
+    .news__other img {
+      width: 40%;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px; }
+    .news__other--info {
+      width: 60%;
+      margin: 1rem; }
+      .news__other--info h5 {
+        font-size: 1.1rem;
+        font-family: "IRANYekan-Bold";
+        margin-bottom: 0; }
+      .news__other--info p {
+        text-align: justify; }
+      .news__other--info .read-more {
+        color: #000;
+        display: inline-block;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        border-bottom: 1px dashed;
+        padding-bottom: .4rem; }
+        .news__other--info .read-more::after {
+          content: "";
+          width: .8rem;
+          height: .8rem;
+          display: inline-block;
+          margin-right: 0.32rem;
+          margin-bottom: -.2rem; }
+    .news__other--category {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .news__other--category p:first-child {
+        color: #fff;
+        background-color: #222;
+        display: inline-block;
+        padding: .5rem;
+        border-radius: 5px;
+        margin: 0;
+        font-size: .8rem; }
+      .news__other--category p:last-child {
+        font-family: "IRANYekan-FD";
+        font-size: .9rem;
+        border-bottom: 1px solid;
+        margin: 0; }
+    .news__other--icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .news__other--icons a {
+        width: 1.5rem;
+        height: 1.5rem; }
+        .news__other--icons a img {
+          width: 100%; }
+    .news__other--author {
+      display: flex;
+      align-items: center; }
+      .news__other--author img {
+        width: 3rem;
+        height: 3rem; }
+      .news__other--author p {
+        margin-right: 1rem; }
+  @media (min-width: 75em) {
+    .news {
+      width: 65%; } }
+
+.sidebar {
+  width: 100%;
+  text-align: center;
+  margin-top: 4rem;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .sidebar__user {
+    border: 1px solid #e2e2e2;
+    border-top: 4px double #e2e2e2;
+    border-radius: 8px;
+    padding: 0 8% 10% 8%;
+    position: relative; }
+    .sidebar__user--title {
+      font-family: "IRANYekan-Bold";
+      font-size: 1.8rem;
+      position: absolute;
+      top: -7%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 1rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__user--title {
+          font-size: 1.3rem; } }
+    .sidebar__user img {
+      width: 10rem;
+      margin-top: 13%; }
+    .sidebar__user--desc {
+      border-bottom: 4px double #e2e2e2;
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__user--desc {
+          font-size: .9rem; } }
+    .sidebar__user--social {
+      display: flex;
+      justify-content: center; }
+      .sidebar__user--social a {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+        .sidebar__user--social a:not(:last-child) {
+          margin-left: 1.5rem; }
+        .sidebar__user--social a img {
+          width: 100%; }
+        @media (min-width: 75em) {
+          .sidebar__user--social a {
+            width: 1.3rem;
+            height: 1.3rem; } }
+  .sidebar__video {
+    position: relative;
+    background: linear-gradient(to top, #000 4%, transparent 40%), url("../assets/img/world.jpg") center/cover;
+    border-radius: 8px;
+    padding: 55% 50%;
+    margin-top: 3rem; }
+    .sidebar__video a {
+      width: 6rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__video a {
+          width: 3.5rem; } }
+    .sidebar__video--title {
+      font-family: "IRANYekan-Bold-FD";
+      color: #fff;
+      width: 100%;
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 5%;
+      line-height: 3rem;
+      font-size: 1.8rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__video--title {
+          line-height: 1.7rem;
+          font-size: 1rem; } }
+  .sidebar__tags {
+    border: 1px solid #e2e2e2;
+    border-top: 4px double #e2e2e2;
+    margin-top: 3rem;
+    border-radius: 8px;
+    position: relative;
+    padding: 6% 2%; }
+    .sidebar__tags--title {
+      font-family: "IRANYekan-Bold";
+      font-size: 1.8rem;
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 1rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__tags--title {
+          top: -10%;
+          font-size: 1.3rem; } }
+  .sidebar__tag {
+    border-radius: 8px;
+    padding: .5rem;
+    display: inline-block;
+    background-color: #e2e2e2;
+    text-decoration: none;
+    color: #000;
+    margin: .5rem;
+    transition-property: transform;
+    transition-duration: 0.3s; }
+    .sidebar__tag p {
+      margin: 0;
+      font-size: 1.3rem;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__tag p {
+          font-size: 1rem; } }
+    .sidebar__tag:hover {
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05); }
+  .sidebar__newsletter {
+    margin-top: 3rem;
+    background-color: #e2e2e2;
+    border-radius: 8px;
+    padding: 10% 5%; }
+    .sidebar__newsletter--title {
+      font-family: "IRANYekan-Bold";
+      font-size: 1.4rem;
+      margin-top: 0;
+      /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+      @media (min-width: 75em) {
+        .sidebar__newsletter--title {
+          font-size: 1.1rem; } }
+    .sidebar__newsletter--form input {
+      display: block;
+      font-family: inherit;
+      margin: 0 auto;
+      width: 80%;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      padding: .5rem;
+      outline: none; }
+    .sidebar__newsletter--form div {
+      border: 2px solid;
+      width: 70%;
+      margin: .8rem auto 0 auto;
+      border-radius: 20px; }
+    .sidebar__newsletter--form button {
+      display: block;
+      font-family: inherit;
+      margin: .2rem auto;
+      width: 95%;
+      color: #fff;
+      background-color: #000;
+      border-radius: 20px;
+      border: none;
+      padding: .5rem;
+      cursor: pointer; }
+  @media (min-width: 75em) {
+    .sidebar {
+      width: 28%; } }
+
+/* ------------------------------------------------------ */
+.footer__insta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 5%;
+  border-top: 1px solid #e2e2e2;
+  padding: 2% 0;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .footer__insta--title {
+    display: flex;
+    flex-direction: column; }
+    .footer__insta--title p {
+      font-family: "IRANYekan-Bold";
+      text-align: center; }
+  .footer__insta img {
+    width: 3rem;
+    height: 3rem;
+    align-self: center; }
+  .footer__insta a {
+    width: 10rem;
+    /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+    .footer__insta a:not(:last-child) {
+      margin-left: 1rem; }
+    .footer__insta a img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; }
+    @media (min-width: 75em) {
+      .footer__insta a:not(:last-child) {
+        margin-left: 0; } }
+  @media (min-width: 75em) {
+    .footer__insta {
+      margin: 0 16%; } }
+
+.footer__scd {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 5%;
+  border-top: 1px solid #e2e2e2;
+  /*@if $breakpoint == jfc {                           //jfc = just for course
+        @media (max-width: 43.75em) { @content };      //700px
+    }*/ }
+  .footer__scd--social {
+    display: flex; }
+    .footer__scd--social a {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: 1rem; }
+      .footer__scd--social a img {
+        width: 100%; }
+  .footer__scd p {
+    margin: 0; }
+  .footer__scd--design {
+    display: flex; }
+  @media (min-width: 75em) {
+    .footer__scd {
+      padding: 1.5rem 16%; } }

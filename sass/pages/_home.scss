@@ -1,0 +1,663 @@
+#slogan {
+    background-image: url('../assets/img/background2.jpg');
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 0, 99% 0, 100% 70%, 50% 100%, 0 70%);
+    ;
+
+    @include respond(tab-land) {
+        height: 88vh;
+        //background-image: url('../assets/img/slogan4.jpg');
+        clip-path: none;
+    }
+}
+
+.slogan__text {
+    position: relative;
+    color: $color-white;
+    padding: 15% 5%;
+    text-align: center;
+
+    h1 {
+        font-family: "IRANYekan-Bold";
+        font-size: 3rem;
+        margin: 0;
+
+        span {
+            display: inline-block;
+            margin-bottom: 2rem;
+
+            @include respond(tab-land) {
+                display: block;
+            }
+        }
+
+        @include respond(tab-land) {
+            margin: auto;
+        }
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 2rem;
+    }
+
+    @include respond(tab-land) {
+        position: absolute;
+        right: 16%;
+        top: 30%;
+        text-align: right;
+        padding: 0;
+    }
+}
+
+/* ------------------------------------------------------ */
+#categories {
+    display: grid;
+    grid-template-columns: 16% 1fr 16%;
+    text-align: center;
+    padding: 5% 0;
+}
+
+[class^="category__item"] {
+    width: 100%;
+    position: relative;
+    color: $color-white;
+    padding: 25%;
+    border-radius: 8px;
+    transition-property: transform;
+    transition-duration: 0.3s;
+
+    &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    @include respond(tab-land) {
+        padding: 40%;
+    }
+}
+
+.category {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        grid-column: 2/3;
+
+        a {
+            width: 100%;
+            margin-top: 2rem;
+            //position: relative;
+
+            @include respond(tab-land) {
+                margin-top: 0;
+
+                &:not(:last-child) {
+                    margin-left: 3rem;
+                }
+            }
+        }
+
+        @include respond(tab-land) {
+            flex-direction: row;
+        }
+    }
+
+    &__item {
+        &--1 {
+            background: linear-gradient(to top, $color-black 4%, transparent 40%), url('../assets/img/learn.jpg') center/cover;
+        }
+
+        &--2 {
+            background: linear-gradient(to top, $color-black 4%, transparent 40%), url("../assets/img/stadium.jpg") center/cover;
+        }
+
+        &--3 {
+            background: linear-gradient(to top, $color-black 4%, transparent 40%), url('../assets/img/bet.jpg') center/cover;
+        }
+
+        &--4 {
+            background: linear-gradient(to top, $color-black 4%, transparent 40%), url('../assets/img/game.jpg') center/cover;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h2 {
+            font-family: "IRANYekan-Bold";
+            font-size: 2rem;
+            margin: 0;
+
+            @include respond(tab-land) {
+                font-size: 1.3rem;
+            }
+        }
+
+        p {
+            margin: .3rem 0 0 0;
+            font-family: "IRANYekan-FD";
+            font-size: 1.4rem;
+
+            @include respond(tab-land) {
+                font-size: inherit;
+            }
+        }
+    }
+}
+
+/* ------------------------------------------------------ */
+#main-content {
+    padding: 3% 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+    flex-direction: column;
+
+    @include respond(tab-land) {
+        padding: 3% 16%;
+        flex-direction: row;
+    }
+}
+
+.news {
+    width: 100%;
+
+    &__bigpic {
+        background: linear-gradient(to top, rgba($color-black, .6), rgba($color-black, .6)), url('../assets/img/ronaldo.jpg') center/cover;
+        border-radius: 8px;
+        color: $color-white;
+        padding: 2% 5%;
+        margin-top: 1.5rem;
+
+        &--category {
+            color: $color-black;
+            background-color: $color-white;
+            display: inline-block;
+            margin-bottom: 0;
+            padding: .5rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+
+            @include respond(tab-land) {
+                font-size: 1rem;
+            }
+        }
+
+        h4 {
+            font-size: 1.6rem;
+            margin: 1.3rem 0;
+
+            @include respond(tab-land) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &--date {
+            font-family: "IRANYekan-FD";
+            border-bottom: 1px solid;
+            display: inline-block;
+            margin: 0;
+            font-size: 1.2rem;
+
+            @include respond(tab-land) {
+                font-size: 1rem;
+            }
+        }
+
+        &--desc {
+            font-size: 1.2rem;
+
+            @include respond(tab-land) {
+                font-size: 1rem;
+            }
+        }
+
+        a {
+            color: $color-white;
+            display: inline-block;
+            margin-bottom: 5rem;
+            text-decoration: none;
+            border-bottom: 1px dashed;
+            padding-bottom: .4rem;
+            font-size: 1.2rem;
+
+            &::after {
+                content: "";
+                width: .8rem;
+                height: .8rem;
+                display: inline-block;
+                margin-right: 0.32rem;
+                margin-bottom: -.2rem;
+                //background: url(../assets/icon/left-arrow-white.svg) center/cover no-repeat;
+            }
+
+            @include respond(tab-land) {
+                font-size: 1rem;
+            }
+        }
+
+        &--author {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            p {
+                margin-right: 1rem;
+                font-size: 1.2rem;
+
+                @include respond(tab-land) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    &__other {
+        display: flex;
+        border: 1px solid $color-grey-light1;
+        border-radius: 8px;
+        margin-top: 2rem;
+
+        img {
+            width: 40%;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        &--info {
+            width: 60%;
+            margin: 1rem;
+
+            h5 {
+                font-size: 1.1rem;
+                font-family: "IRANYekan-Bold";
+                margin-bottom: 0;
+            }
+
+            p {
+                text-align: justify;
+            }
+
+            .read-more {
+                color: $color-black;
+                display: inline-block;
+                margin-bottom: 1rem;
+                text-decoration: none;
+                border-bottom: 1px dashed;
+                padding-bottom: .4rem;
+
+                &::after {
+                    content: "";
+                    width: .8rem;
+                    height: .8rem;
+                    display: inline-block;
+                    margin-right: 0.32rem;
+                    margin-bottom: -.2rem;
+                    //background: url(../assets/icon/left-arrow.svg) center/cover no-repeat;
+                }
+            }
+        }
+
+        &--category {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p:first-child {
+                color: $color-white;
+                background-color: $color-grey-dark1;
+                display: inline-block;
+                padding: .5rem;
+                border-radius: 5px;
+                margin: 0;
+                font-size: .8rem;
+            }
+
+            p:last-child {
+                font-family: "IRANYekan-FD";
+                font-size: .9rem;
+                border-bottom: 1px solid;
+                margin: 0;
+            }
+        }
+
+        &--icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            a {
+                width: 1.5rem;
+                height: 1.5rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &--author {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            p {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    @include respond(tab-land) {
+        width: 65%;
+    }
+}
+
+.sidebar {
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+
+    &__user {
+        border: 1px solid $color-grey-light1;
+        border-top: 4px double $color-grey-light1;
+        border-radius: 8px;
+        padding: 0 8% 10% 8%;
+        position: relative;
+
+        &--title {
+            font-family: "IRANYekan-Bold";
+            font-size: 1.8rem;
+            position: absolute;
+            top: -7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-white;
+            padding: 1rem;
+
+            @include respond(tab-land) {
+                font-size: 1.3rem;
+            }
+        }
+
+        img {
+            width: 10rem;
+            margin-top: 13%;
+        }
+
+        &--desc {
+            border-bottom: 4px double $color-grey-light1;
+            padding-bottom: 1rem;
+            font-size: 1.5rem;
+
+            @include respond(tab-land) {
+                font-size: .9rem;
+            }
+        }
+
+        &--social {
+            display: flex;
+            justify-content: center;
+
+            a {
+                width: 2rem;
+                height: 2rem;
+                display: block;
+
+                &:not(:last-child) {
+                    margin-left: 1.5rem;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                @include respond(tab-land) {
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+            }
+        }
+    }
+
+    &__video {
+        position: relative;
+        //background: linear-gradient(to top, $color-black 4%, transparent 40%), url('../assets/img/world.jpg') center/cover;
+        border-radius: 8px;
+        padding: 55% 50%;
+        margin-top: 3rem;
+
+        a {
+            width: 6rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include respond(tab-land) {
+                width: 3.5rem;
+            }
+        }
+
+        &--title {
+            font-family: "IRANYekan-Bold-FD";
+            color: $color-white;
+            width: 100%;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 5%;
+            line-height: 3rem;
+            font-size: 1.8rem;
+
+            @include respond(tab-land) {
+                line-height: 1.7rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__tags {
+        border: 1px solid $color-grey-light1;
+        border-top: 4px double $color-grey-light1;
+        margin-top: 3rem;
+        border-radius: 8px;
+        position: relative;
+        padding: 6% 2%;
+
+        &--title {
+            font-family: "IRANYekan-Bold";
+            font-size: 1.8rem;
+            position: absolute;
+            top: -15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-white;
+            padding: 1rem;
+
+            @include respond(tab-land) {
+                top: -10%;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    &__tag {
+        border-radius: 8px;
+        padding: .5rem;
+        display: inline-block;
+        background-color: #e2e2e2;
+        text-decoration: none;
+        color: $color-black;
+        margin: .5rem;
+        transition-property: transform;
+        transition-duration: 0.3s;
+
+        p {
+            margin: 0;
+            font-size: 1.3rem;
+
+            @include respond(tab-land) {
+                font-size: 1rem;
+            }
+        }
+
+        &:hover {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+    }
+
+    &__newsletter {
+        margin-top: 3rem;
+        background-color: $color-grey-light1;
+        border-radius: 8px;
+        padding: 10% 5%;
+
+        &--title {
+            font-family: "IRANYekan-Bold";
+            font-size: 1.4rem;
+            margin-top: 0;
+
+            @include respond(tab-land) {
+                font-size: 1.1rem;
+            }
+        }
+
+        &--form {
+            input {
+                display: block;
+                font-family: inherit;
+                margin: 0 auto;
+                width: 80%;
+                text-align: center;
+                border: none;
+                border-radius: 5px;
+                padding: .5rem;
+                outline: none;
+            }
+
+            div {
+                border: 2px solid;
+                width: 70%;
+                margin: .8rem auto 0 auto;
+                border-radius: 20px;
+            }
+
+            button {
+                display: block;
+                font-family: inherit;
+                margin: .2rem auto;
+                width: 95%;
+                color: $color-white;
+                background-color: $color-black;
+                border-radius: 20px;
+                border: none;
+                padding: .5rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @include respond(tab-land) {
+        width: 28%;
+    }
+}
+
+/* ------------------------------------------------------ */
+.footer__insta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5%;
+    border-top: 1px solid $color-grey-light1;
+    padding: 2% 0;
+
+    &--title {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-family: "IRANYekan-Bold";
+            text-align: center;
+        }
+    }
+
+    img {
+        width: 3rem;
+        height: 3rem;
+        align-self: center;
+    }
+
+    a {
+        width: 10rem;
+
+        &:not(:last-child) {
+            margin-left: 1rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @include respond(tab-land) {
+            &:not(:last-child) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    @include respond(tab-land) {
+        margin: 0 16%;
+    }
+}
+
+.footer__scd {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    border-top: 1px solid $color-grey-light1;
+
+    &--social {
+        display: flex;
+
+        a {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-left: 1rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    &--design {
+        display: flex;
+    }
+
+    @include respond(tab-land) {
+        padding: 1.5rem 16%;
+    }
+}

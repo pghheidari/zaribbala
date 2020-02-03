@@ -1,0 +1,10 @@
+.btn {
+    padding: .8rem 1.6rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+
+    &--white {
+        color: $color-white;
+        border: 1px solid $color-white;
+    }
+}
